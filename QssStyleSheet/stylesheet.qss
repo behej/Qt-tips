@@ -1,0 +1,115 @@
+/* Universal selector */
+/*====================*/
+* {
+    background-color: white;
+}
+
+/* Simple widget */
+/*===============*/
+/* Properties applying to all widgets of indicated classes, including subclasses.
+Indicate several classes separated with comas.
+*/
+QPushButton, QLineEdit {
+    padding: 10px 5px;
+    margin: 20px;
+    text-align: center;
+    background-color: gray;
+    border-radius: 10px;
+}
+
+QLabel {
+    font-family: "Poetsen One";
+    font: 16pt;
+}
+
+/* Same as simple widget rule, but only matches axact class.
+This rule won't apply to subclasses
+*/
+.QPushButton {
+}
+
+/* Widgets hierarchy */
+/*===================*/
+/* This rule applies to only QLabel that are children of QGroupBox (direct children
+or not). Other QLabel are not concerned.
+*/
+QGroupBox QLabel {
+    image: url(:/floppy.png);
+    width: 50px;
+}
+
+/* This rule apply to QPushButton that are direct childre of QFrame.
+*/
+QFrame > QPushButton {
+}
+
+
+/* Named widgets */
+/*===============*/
+/* Rule that apply to widget with given name. Name is set to widget thanks to
+the setObjectName method or through ObjectName property in QtDesigner.
+*/
+QLineEdit#firstName {
+    background-color: white;
+    border: 2px dashed grey;
+}
+
+
+/* Pseudo states */
+/* ==============*/
+/* Pseudo states are specific states that can hold a widget such
+as hover, enabled, disabled, pressed, checked */
+QPushButton:hover {
+    border: 1px solid red;
+    background-color: blue;
+}
+
+
+/* Sub-controls */
+/*==============*/
+/* Some widgets are composed of several sub-controls such as the "filling" part for
+QProgressBar or up and down arrows for QSpinBox. It is possible to customize each
+part individually using sub-controls syntax.
+*/
+QProgressBar {
+    color: #F0F0F0;
+    background-color: #B0B0B0;
+    text-align: center;
+    font: italic bold 14px;
+    border-radius: 5px;
+    border: 1px solid #404040;
+}
+QProgressBar::chunk {
+    background-color: #76ccae;
+    width: 10px;
+    margin: 0.5px;
+}
+
+/* Precisions about specificity and order */
+/*========================================*/
+/* Some rules may apply simultaneously to both a general rule (eg a widget class)
+and a more specific rule (eg a widget in a given pseudo state). In that case, the
+most specific rule takes it and overrides less specific ones.
+For rules of equivalent specificity, eg hover pseudo-state above and pressed pseudo-state
+below, order shall be taken into account. A button is also hovered to be pressed.
+As pressed state is defined after hover, when button is pressed, the corresponding rule
+apply and supersedes hover rule.
+In the hypothetic case where pressed would have been defined before hover, hover rule
+would have been more prioritary and applied even when button would would have been pressed.
+*/
+QPushButton:pressed {
+    border: 1px solid red;
+    background-color: yellow;
+}
+
+/* combinations */
+/*--------------*/
+/* It is possible to combine several pseudo states by simply chaining them.
+It is also possible to create a rule for when a state is NOT fulfilled by
+adding the exclamation make
+*/
+QPushButton:enabled:checked {   /* enable AND checked */
+}
+QPushButton:enabled:!checked {   /* enable AND NOT checked */
+}
+

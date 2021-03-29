@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>stylesheet.qss</file>
+        <file alias="floppy.png">floppy-disk.png</file>
+        <file alias="font.ttf">PoetsenOne-Regular.ttf</file>
+    </qresource>
+</RCC>

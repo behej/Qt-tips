@@ -16,3 +16,9 @@ Available examples are:
 for speed. There are several profiles available in Qt.
 1. Custom animation: Equation for animation computation is user-defined. Example
 shown here is a non linear movement.
+
+## QssStyleSheet
+A quick introduction to QssStyleSheet and also to font file.
+* Load and apply a stylesheet stored in a file
+* QssStyleSheet syntax
+* Load a font file a make it available to application (incl. stylesheet)

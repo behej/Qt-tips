@@ -4,12 +4,12 @@
 <context>
     <name>Page1Form.ui</name>
     <message>
-        <location filename="Page1Form.ui.qml" line="9"/>
+        <location filename="Page1Form.ui.qml" line="10"/>
         <source>Page 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Page1Form.ui.qml" line="15"/>
+        <location filename="Page1Form.ui.qml" line="17"/>
         <source>You are on Page 1.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -19,12 +19,12 @@ Custom geometry + using custom animation</source>
     <name>Page2Form.ui</name>
     <message>
         <location filename="Page2Form.ui.qml" line="9"/>
-        <source>Page 2</source>
+        <source>Bouncing Ball</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Page2Form.ui.qml" line="16"/>
-        <source>Nothing here</source>
+        <location filename="Page2Form.ui.qml" line="17"/>
+        <source>Playing with easing curves</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

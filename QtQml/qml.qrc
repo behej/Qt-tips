@@ -7,5 +7,6 @@
         <file>MyBusyIndicator.ui.qml</file>
         <file>Page3Form.ui.qml</file>
         <file>LevelPicker.ui.qml</file>
+        <file>BouncingBall.ui.qml</file>
     </qresource>
 </RCC>

@@ -16,8 +16,10 @@ Page {
         id: label
         text: qsTr("Custom BusyIndicator.\nCustom geometry + using custom animation")
         anchors {
-            top: parent.top; topMargin: 20
-            left: parent.left; right: parent.right
+            top: parent.top
+            topMargin: 20
+            left: parent.left
+            right: parent.right
         }
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
@@ -31,10 +33,9 @@ Page {
         running: true
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 10
-//        anchors.left: parent.left
-//        anchors.right: parent.right
         spotColor: "steelblue"
         spotSize: 15
         spotCount: 10
+        animDuration: 1000
     }
 }

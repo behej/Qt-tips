@@ -19,39 +19,12 @@ BusyIndicator {
         implicitWidth: size
         implicitHeight: implicitWidth
 
-        //        // Animator that rotate the entire object
-        //        RotationAnimator {
-        //            id: animator
-        //            target: frame
-        //            from: 0
-        //            to: 360
-        //            duration: 5000
-        //            running: mybusyindicator.running
-        //            loops: Animation.Infinite
-        //        }
-        PauseAnimation {
-            duration: animDuration / spotCount
-            onFinished: {
-                frame.rotation = frame.rotation + (360 / spotCount)
-                running = true
-            }
-            running: myBusyIndicator.running
+        Timer {
+            interval: animDuration / spotCount
+            repeat: true
+            running: true
+            onTriggered: frame.rotation = (frame.rotation + (360 / spotCount)) % 360
         }
-
-        //        SequentialAnimation {
-
-        //            PropertyAction { target: frame; property: "rotation"; value: (loops + 20) }
-        //            PauseAnimation { duration: 1000 }
-        //            PropertyAction { target: frame; property: "rotation"; value: (loops + 90) }
-        //            PauseAnimation { duration: 1000 }
-        //            PropertyAction { target: frame; property: "rotation"; value: 40 }
-        //            PauseAnimation { duration: 1000 }
-        //            PropertyAction { target: frame; property: "rotation"; value: 60 }
-        //            PauseAnimation { duration: 1000 }
-        //            PropertyAction { target: frame; property: "rotation"; value: 80 }
-        //            running: true
-        //            loops: Animation.Infinite
-        //        }
 
         // Repeater to create widget several times
         Repeater {
@@ -83,6 +56,3 @@ BusyIndicator {
         }
     }
 }
-
-
-

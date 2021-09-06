@@ -5,5 +5,7 @@
         <file>Page2Form.ui.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>MyBusyIndicator.ui.qml</file>
+        <file>Page3Form.ui.qml</file>
+        <file>LevelPicker.ui.qml</file>
     </qresource>
 </RCC>

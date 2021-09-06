@@ -10,7 +10,8 @@
     </message>
     <message>
         <location filename="Page1Form.ui.qml" line="17"/>
-        <source>You are on Page 1.</source>
+        <source>Custom BusyIndicator.
+Custom geometry + using custom animation</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -22,8 +23,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Page2Form.ui.qml" line="15"/>
-        <source>You are on Page 2.</source>
+        <location filename="Page2Form.ui.qml" line="16"/>
+        <source>Nothing here</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Page3Form.ui</name>
+    <message>
+        <location filename="Page3Form.ui.qml" line="10"/>
+        <source>Bargraph to set level</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -35,13 +44,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.qml" line="27"/>
+        <location filename="main.qml" line="30"/>
         <source>Page 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.qml" line="30"/>
+        <location filename="main.qml" line="33"/>
         <source>Page 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main.qml" line="36"/>
+        <source>Page 3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

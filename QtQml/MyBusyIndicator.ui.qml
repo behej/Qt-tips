@@ -10,7 +10,7 @@ BusyIndicator {
     property int size: 100
     property int spotSize: 20
     property int spotCount: 6
-    property alias duration: animator.duration
+    property int animDuration: 5000
 
     // BusyIndicator contains 2 parts that can be customized: contentItem and Background
     // Here we customize contentItem.
@@ -19,16 +19,39 @@ BusyIndicator {
         implicitWidth: size
         implicitHeight: implicitWidth
 
-        // Animator that rotate the entire object
-        RotationAnimator {
-            id: animator
-            target: frame
-            from: 0
-            to: 360
-            duration: 5000
-            running: mybusyindicator.running
-            loops: Animation.Infinite
+        //        // Animator that rotate the entire object
+        //        RotationAnimator {
+        //            id: animator
+        //            target: frame
+        //            from: 0
+        //            to: 360
+        //            duration: 5000
+        //            running: mybusyindicator.running
+        //            loops: Animation.Infinite
+        //        }
+        PauseAnimation {
+            duration: animDuration / spotCount
+            onFinished: {
+                frame.rotation = frame.rotation + (360 / spotCount)
+                running = true
+            }
+            running: myBusyIndicator.running
         }
+
+        //        SequentialAnimation {
+
+        //            PropertyAction { target: frame; property: "rotation"; value: (loops + 20) }
+        //            PauseAnimation { duration: 1000 }
+        //            PropertyAction { target: frame; property: "rotation"; value: (loops + 90) }
+        //            PauseAnimation { duration: 1000 }
+        //            PropertyAction { target: frame; property: "rotation"; value: 40 }
+        //            PauseAnimation { duration: 1000 }
+        //            PropertyAction { target: frame; property: "rotation"; value: 60 }
+        //            PauseAnimation { duration: 1000 }
+        //            PropertyAction { target: frame; property: "rotation"; value: 80 }
+        //            running: true
+        //            loops: Animation.Infinite
+        //        }
 
         // Repeater to create widget several times
         Repeater {
@@ -61,9 +84,5 @@ BusyIndicator {
     }
 }
 
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:100;width:100}
-}
-##^##*/
+
 

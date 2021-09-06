@@ -14,15 +14,13 @@ Page {
 
     Label {
         id: label
-        text: qsTr("You are on Page 1.")
-        anchors.top: parent.top
-        anchors.topMargin: 20
+        text: qsTr("Custom BusyIndicator.\nCustom geometry + using custom animation")
+        anchors {
+            top: parent.top; topMargin: 20
+            left: parent.left; right: parent.right
+        }
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        anchors.rightMargin: 0
-        anchors.leftMargin: 0
-        anchors.left: parent.left
-        anchors.right: parent.right
         padding: 10
     }
 
@@ -33,8 +31,8 @@ Page {
         running: true
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 10
-        anchors.left: parent.left
-        anchors.right: parent.right
+//        anchors.left: parent.left
+//        anchors.right: parent.right
         spotColor: "steelblue"
         spotSize: 15
         spotCount: 10

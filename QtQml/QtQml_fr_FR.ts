@@ -12,6 +12,8 @@
         <location filename="Page1Form.ui.qml" line="17"/>
         <source>Custom BusyIndicator.
 Custom geometry + using custom animation</source>
+        <oldsource>Custom BusyIndicator.
+Custom geometry + using custom animationtt</oldsource>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -37,6 +39,14 @@ Custom geometry + using custom animation</source>
     </message>
 </context>
 <context>
+    <name>Page4Form</name>
+    <message>
+        <location filename="Page4Form.qml" line="11"/>
+        <source>ListView</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>main</name>
     <message>
         <location filename="main.qml" line="8"/>
@@ -44,18 +54,23 @@ Custom geometry + using custom animation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.qml" line="30"/>
+        <location filename="main.qml" line="27"/>
         <source>Page 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.qml" line="33"/>
+        <location filename="main.qml" line="30"/>
         <source>Page 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.qml" line="36"/>
+        <location filename="main.qml" line="33"/>
         <source>Page 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main.qml" line="36"/>
+        <source>Page 4</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

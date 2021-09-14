@@ -9,17 +9,14 @@ ApplicationWindow {
 
     SwipeView {
         id: swipeView
+        focus: true
         anchors.fill: parent
         currentIndex: tabBar.currentIndex
 
-        Page1Form {
-        }
-
-        Page2Form {
-        }
-
-        Page3Form {
-        }
+        Page1Form {}
+        Page2Form {}
+        Page3Form {}
+        Page4Form {}
     }
 
     footer: TabBar {
@@ -34,6 +31,9 @@ ApplicationWindow {
         }
         TabButton {
             text: qsTr("Page 3")
+        }
+        TabButton {
+            text: qsTr("Page 4")
         }
     }
 }

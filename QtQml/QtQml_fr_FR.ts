@@ -41,7 +41,7 @@ Custom geometry + using custom animationtt</oldsource>
 <context>
     <name>Page4Form</name>
     <message>
-        <location filename="Page4Form.qml" line="11"/>
+        <location filename="Page4Form.qml" line="12"/>
         <source>ListView</source>
         <translation type="unfinished"></translation>
     </message>

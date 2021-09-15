@@ -9,5 +9,7 @@
         <file>LevelPicker.ui.qml</file>
         <file>BouncingBall.ui.qml</file>
         <file>Page4Form.qml</file>
+        <file>MyListView.qml</file>
+        <file>MyListViewUpButton.qml</file>
     </qresource>
 </RCC>

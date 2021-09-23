@@ -109,7 +109,17 @@ Item {
                 text: section
                 font.pointSize: 16
                 font.italic: true
+                font.bold: true
+                color: "#444444"
             }
+        }
+    }
+
+    Component {
+        id: highlightDelegate
+        Rectangle {
+            anchors.left: parent.left; anchors.right: parent.right
+            color: "lightgrey"
         }
     }
 
@@ -121,17 +131,14 @@ Item {
         focus: true
         header: buttonUp
         footer: buttonDown
+        highlight: highlightDelegate
+        keyNavigationWraps: true
 
-        highlight: Rectangle {
-            anchors.left: parent.left; anchors.right: parent.right
-            height: 20
-            color: "lightgrey"
+        section {
+            property: "gender"
+            criteria: ViewSection.FullString
+            delegate: sectionDelegate
         }
-
-        section.property: "gender"
-        section.criteria: ViewSection.FullString
-        section.delegate: sectionDelegate
-
     }
 
 

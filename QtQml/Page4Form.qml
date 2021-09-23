@@ -6,6 +6,7 @@ Page {
     id: page
     width: 600
     height: 400
+    focus: true
 
 
     header: Label {

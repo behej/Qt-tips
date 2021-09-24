@@ -20,9 +20,16 @@ Item {
         id: peopleDelegate
         Rectangle {
             readonly property ListView __lv: ListView.view
+            // readonly property ListModel __model: ListView.model
+            property bool expanded: __lv.isSectionExpanded(model.gender)
             anchors.left: parent.left; anchors.right: parent.right
-            height: nameLbl.implicitHeight + ageLbl.implicitHeight + 5
+            height: expanded ? nameLbl.implicitHeight + ageLbl.implicitHeight + 5 : 0
+            clip: true
             color: "transparent"
+
+            Behavior on height {
+                NumberAnimation { duration: 200 }
+            }
 
 
             Text {
@@ -112,7 +119,14 @@ Item {
                 font.bold: true
                 color: "#444444"
             }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: __lv.toggleSection(section)
+            }
+
         }
+
     }
 
     Component {
@@ -124,6 +138,8 @@ Item {
     }
 
     ListView {
+        property var collapsed: ({})
+
         anchors.fill: parent
         model: peopleModel
         delegate: peopleDelegate
@@ -139,7 +155,32 @@ Item {
             criteria: ViewSection.FullString
             delegate: sectionDelegate
         }
+
+
+        function isSectionExpanded(section) {
+            return !(section in collapsed);
+        }
+
+        function showSection(section) {
+            delete collapsed[section];
+            /* emit */ collapsedChanged();
+        }
+
+        function hideSection(section) {
+            collapsed[section] = true;
+            /* emit */ collapsedChanged();
+        }
+
+        function toggleSection(section) {
+            if (isSectionExpanded(section)) {
+                hideSection(section)
+            } else {
+                showSection(section)
+            }
+        }
     }
+
+
 
 
 }

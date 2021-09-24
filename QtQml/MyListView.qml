@@ -141,14 +141,19 @@ Item {
         property var collapsed: ({})
 
         anchors.fill: parent
-        model: peopleModel
-        delegate: peopleDelegate
         clip: true
         focus: true
+        keyNavigationWraps: true
+
+        populate: Transition {      // Animation for 1st fill of ListView. Does not render very well with sections
+            NumberAnimation { properties: "x, y"; duration:  300}
+        }
+
+        model: peopleModel
+        delegate: peopleDelegate
         header: buttonUp
         footer: buttonDown
         highlight: highlightDelegate
-        keyNavigationWraps: true
 
         section {
             property: "gender"

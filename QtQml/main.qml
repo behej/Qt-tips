@@ -13,10 +13,10 @@ ApplicationWindow {
         anchors.fill: parent
         currentIndex: tabBar.currentIndex
 
-        Page1Form {}
+        Page4Form {}
         Page2Form {}
         Page3Form {}
-        Page4Form {}
+        Page1Form {}
     }
 
     footer: TabBar {

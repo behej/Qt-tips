@@ -47,7 +47,10 @@ Item {
             }
             MouseArea {
                 anchors.fill: parent
-                onClicked: __lv.currentIndex = model.index
+                onClicked: {
+                    __lv.currentIndex = model.index;
+                    peopleModel.insert(0, {name: "Item #"+peopleModel.count , age: 0, gender:"Undefined"})
+                }
             }
         }
     }
@@ -147,6 +150,16 @@ Item {
 
         populate: Transition {      // Animation for 1st fill of ListView. Does not render very well with sections
             NumberAnimation { properties: "x, y"; duration:  300}
+        }
+
+        add: Transition {   // Animation when a item is added in the list
+            PropertyAction { property: "transformOrigin"; value: Item.TopLeft }
+            NumberAnimation { properties: "opacity,scale"; from: 0.0; to: 1.0; duration: 500 }
+        }
+
+        displaced: Transition { // Animation when an element is moved
+            PropertyAction { properties: "opacity,scale"; value: 1.0 }  // Opacity and scale are forced to 1.0 in case animation on Add didn't complete (ex: has been interupt by a even newer item insertion)
+            NumberAnimation { properties: "x,y"; duration: 500 }    // Item is smoothly shifted to let space for the newly inserted item
         }
 
         model: peopleModel

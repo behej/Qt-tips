@@ -147,6 +147,7 @@ Item {
         clip: true
         focus: true
         keyNavigationWraps: true
+        snapMode: ListView.SnapOneItem  // Snap item. Si en plus le delegate fait exactement la taille de la listView, ca fait un effet swipeView
 
         populate: Transition {      // Animation for 1st fill of ListView. Does not render very well with sections
             NumberAnimation { properties: "x, y"; duration:  300}

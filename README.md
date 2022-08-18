@@ -22,3 +22,10 @@ A quick introduction to QssStyleSheet and also to font file.
 * Load and apply a stylesheet stored in a file
 * QssStyleSheet syntax
 * Load a font file a make it available to application (incl. stylesheet)
+
+## QtQml
+A quick overview of what's possible with QML
+* Customizing a busy indicator
+* A bouncing ball made with QML animations
+* Custom component to set a level (sound level, brightness level, etc.)
+* Model/View implementation with QML with deletegates, headers, collapsible groups, insertion/deletion, smooth animations
